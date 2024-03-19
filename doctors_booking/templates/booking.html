@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+
+{% block title%}
+Booking
+{% endblock %}
+
+{% block content%}
+<h1 class="text-center">Book Your Appointment</h1>
+<hr>
+
+<div class="container w-55 mx-auto p-4 my-5 bg-light border rounded">
+    <h2 class="text-center mb-4">Book Your Appointment</h2>
+
+    <form method="POST" >
+        {% csrf_token %}
+
+        <div class="mb-3 row">
+            <label class="col-md-3 col-form-label">{{ form.p_name.label_tag }}</label>
+            <div class="col-md-9">
+                {{ form.p_name }}
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label class="col-md-3 col-form-label">{{ form.p_phone.label_tag }}</label>
+            <div class="col-md-9">
+                {{ form.p_phone }}
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label class="col-md-3 col-form-label">{{ form.p_email.label_tag }}</label>
+            <div class="col-md-9">
+                {{ form.p_email }}
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label class="col-md-3 col-form-label">{{ form.dep_name.label_tag }}</label>
+            <div class="col-md-9">
+                {{ form.dep_name }}
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label class="col-md-3 col-form-label">{{ form.doc_name.label_tag }}</label>
+            <div class="col-md-9">
+                {{ form.doc_name }}
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label class="col-md-3 col-form-label">{{ form.booking_date.label_tag }}</label>
+            <div class="col-md-9">
+                {{ form.booking_date }}
+            </div>
+        </div>
+
+        <hr>
+
+        <button class="btn btn-primary text-center  p-2" type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
